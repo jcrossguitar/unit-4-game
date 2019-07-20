@@ -1,0 +1,26 @@
+body {
+    font-size: 24px;
+    background-color: teal;
+}
+
+h1 {
+    padding: 5%;
+    color: white;
+    text-align: center;
+    background-color: brown;
+}
+
+.containerDiv {
+    float: left;
+    width: 75%;
+}
+
+.scoreBoard {
+    float: right;
+    width: 25%;
+    background-color: blue;
+    color: white;
+    margin: 10px;
+    border: 3px;
+
+}

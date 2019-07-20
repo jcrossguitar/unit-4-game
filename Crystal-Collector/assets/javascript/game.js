@@ -1,10 +1,16 @@
 // wraps my content fo javascript
 $(document).ready(function() {
-    
+    // an array of gem values
+    var gemArray = ["1","2","3","4","5","10","15","20"];
+    // computer number
     var randomNumber = [];
-    var wins = [];
-    var losses = [];
-    var pointCounter = [];
+    // number of wins
+    var wins = [0];
+    // number of losses
+    var losses = [0];
+    // keeps track of your current point total
+    var pointCounter = [0];
+    
 
     
     
