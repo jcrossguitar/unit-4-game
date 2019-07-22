@@ -3,21 +3,19 @@
         <head>
             <meta charset="UTF-8">
             <title>Crystal Collector</title>
-            <script src="https://code.jquery.com/jquery.js"></script>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
             <link rel="stylesheet" href="assets/css/style.css">
             <link rel="javascript" href="assets/javascript/game.js">
-            <link rel="images" href="assets/images">
+            <link id="emerald" rel="images" href="assets/images/emerald_pinwheel.jpg">
         </head>
 
         <h1>CRYSTAL COLLECTOR</h1>
-  
-        
-
-
 
 
         <body>
+            <div class="crystals">
+
+            </div>
             <div class="containerDiv">
                 <div id="instructions">
                     <h3>Instructions</h3>
@@ -27,17 +25,30 @@
                             with the computer's choice without going over.</p>
                         <p>Each victory and defeat will be logged in the score box.</p>
                         <p>Each time the game is reset, the gem values are also reset.</p>
-                </div>
-                <div class="scoreBoard">
-                        <p id="displayWins">wins</p>
-                        <p id="displayLosses">losses</p>
-                </div>
-                <div id="computerGuess">This area will be where the number appears you must match</div>
-
-                
-                <div id="titlePoints">Your total points are:</div>
-                <div id="points">This area will display the points 000</div>
+                </div>    
             </div>
+            <div id="computerGuess">This area will be where the number appears you must match</div>
+            <br>
+                <br>
+        <div class="rightColumn">
+                <div id="titlePoints">Your total points are:</div>
+                <br>
+                    <br>
+                <div id="points">This area will display the points 000</div>
+
+        </div>
+           
+            
+            <div class="scoreBoard">
+                    <p id="displayWins">WINS: </p>
+                    <p id="displayLosses">LOSSES: </p>
+            </div>
+            <br>
+                <br>
+                    <br>
+                    
+<button type="button" onclick="alert('works')">Click Me
+    </button>
 
         </body>
     </html>
