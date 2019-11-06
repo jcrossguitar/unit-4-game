@@ -2,33 +2,29 @@
     <html>
         <head>
             <meta charset="UTF-8">
-            <title>Crystal Collector</title>
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <link href="https://fonts.googleapis.com/css?family=Sans-serif" rel="stylesheet">     
             <link rel="stylesheet" href="assets/css/style.css">
-            <link rel="javascript" href="assets/javascript/game.js">
-            <link id="emerald" rel="images" href="assets/images/emerald_pinwheel.jpg">
+            <title>Crystal Collector</title>
         </head>
-
-        <h1>CRYSTAL COLLECTOR</h1>
-
-
         <body>
-            <div class="crystals">
-
-            </div>
-            <div class="containerDiv">
-                <div id="instructions">
-                    <h3>Instructions</h3>
+            <div class="container">
+                <div class="row">
+                        <h1 class="header">CRYSTAL COLLECTOR</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 instructions">
                         <p>Each gem has a random value at the start 
                             of each round you access by clicking the gem.</p>
                         <p>The objective is to match your number
                             with the computer's choice without going over.</p>
                         <p>Each victory and defeat will be logged in the score box.</p>
                         <p>Each time the game is reset, the gem values are also reset.</p>
+                    </div>
                 </div>    
-            </div>
+            <br>
             <div class="row">
-					<div class="col-lg-6 randomNumber">Random Generated Number</div>
+					<div class="col-lg-6 randomNumber">Match This Number!</div>
 					<div class = "col-lg-1"></div>
 					<div class="col-lg-2 totalWL">
 						<div class="row wins">Wins</div>
@@ -37,7 +33,7 @@
 				</div>
             <div class="row"> 
 					<div class="col-lg-3 gems">
-						<div id="img1"></div>
+					    <div id="img1"></div>
 					</div>
 					<div class="col-lg-3">
 						<div id="img2"></div>
@@ -58,8 +54,9 @@
             <div class="row">
                 <div class="col-lg-6 scoreDisplay">Current Score</div>
             
-                    
-
-
+            </div>
+    
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script type="text/javascript" src="assets/javascript/game.js"></script>
         </body>
     </html>

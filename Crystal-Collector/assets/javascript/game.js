@@ -1,88 +1,99 @@
 $(document).ready(function() {
 
-    // var topics = ["emerald", "Sapphire", "Ruby", "Opal"];
-    // // ADDED THIS FORLOOP AND FUNCTION FROM SOLUTIONS
-    // function populateButtons(arrayToUse, classToAdd, areaToAddTo) {
-    //     $(areaToAddTo).empty();
+    var compPick = Math.floor(Math.random() * 1000) + 100; 
+    console.log("compPick: " + compPick); 
+    $(".randomNumber").html(compPick); 
+
+
+var gemOne = Math.floor(Math.random() * 300) + 50; 
+    console.log("Gem 1: " + gemOne); 
+    $("#img1").html("<img src=" + "assets/images/emerald.jpg" + " value=" + gemOne + ">"); 
+
+var gemTwo = Math.floor(Math.random() * 300) + 50; 
+    console.log("Gem 2: " + gemTwo); 
+    $("#img2").html("<img src=" + "assets/images/opal.jpg" + " value=" + gemTwo + ">"); 
+
+var gemThree = Math.floor(Math.random() * 300) + 50; 
+    console.log("Gem 3: " + gemThree); 
+    $("#img3").html("<img src=" + "assets/images/ruby.jpg" + " value=" + gemThree + ">");
+
+var gemFour = Math.floor(Math.random() * 300) + 50; 
+    console.log("Gem 4: " + gemFour); 
+    $("#img4").html("<img src=" + "assets/images/sapphire.jpg" + " value=" + gemFour + ">");
     
-    //     for (var i = 0; i < arrayToUse.length; i++) {
-    //         var a = $("<button class='srchBtn'>");
-    //         a.addClass(classToAdd);
-    //         a.attr("data-type", arrayToUse[i]);
-    //         a.text(arrayToUse[i]);
-    //         $(areaToAddTo).append(a);
-    //       }
-      
-    //     }
-    
-    
-    // this area creates a for loop that adds buttons for each "topics" value
-    // for (var i = 0; i < topics.length; i++) { 
-    //     var buttons = $('<button>'+ topics[i] + '</button>') 
-    //     buttons.appendTo('#topics'); 
-    // } 
-    
-    // var createRow = function(data) {
-    //     // Create a new table row element
-    //     var tRow = $("<tr>");
-    //     // Methods run on jQuery selectors return the selector they we run on
-    //     // This is why we can create and save a reference to a td in the same statement we update its text
-    //     var titleTd = $("<td>").text(data);
-    //     // Append the newly created table data to the table row
-    //     tRow.append(titleTd);
-    //     // Append the table row to the table body
-    //     $("tbody").append(tRow);
-    //   };
-      
-    var theTotal = 0;
-      $('button').click(function(){
-         theTotal = Number(theTotal) + Number($(this).val());
-          $('.total').text("Total: " + theTotal);        
-      });
-      
-      $('.total').text("Total: " + theTotal); 
-      
-      
-      console.log(theTotal);
+var wins = 0; 
+    console.log("wins: " + wins); 
 
+var losses = 0; 
+    console.log("losses: " + losses); 
 
+var score = 0; 
+    console.log("score: " + score); 
 
+function reset () {
+    compPick = Math.floor(Math.random() * 102) + 19; 
+        console.log("compPick: " + compPick); 
+    $(".randomNumber").html(compPick); 
 
-// // wraps my content fo javascript
-//     // an array of gem values
-//     var gemArray = ["3","4","11","13","20"];
+    score = 0; 
+    $(".scoreDisplay").html(score); 
 
-//     var gems = ["emerald", "opal", "ruby", "sapphire"];
-//     // computer guesses a number
-//     var randomNumber; 
-//     // number of wins
-//     var wins;
-//     // number of losses
-//     var losses;
-//     // keeps track of your current point total
-//     var pointCounter = [];
-    
-//     randomNumber = Math.floor(Math.random() * 94 ) + 40;
-    
-    
-//     // for loop for the crystals
-//     for(var i = 0; i < 4; i++){
-//         // randomizes the value of each crystal
-//         var random = Math.floor(Math.random() * 13) + 1;
-//         console.log(random);
+    gemOne = Math.floor(Math.random() * 300) + 50;  
+        console.log("Emerald: " + gemOne); 
+    $("#img1").html("<img src=" + "assets/images/emerald.jpg" + " value=" + gemOne + ">"); 
 
-//         var crystal = $("<div>");
-//             crystal.attr({
-//                 "class": 'crystal',
-//                 "data-random": random
-//             });
-    
-//         $(".crystals").append(crystal);
+    gemTwo = Math.floor(Math.random() * 300) + 50; 
+        console.log("Opal: " + gemTwo); 
+    $("#img2").html("<img src=" + "assets/images/opal.jpg" + " value=" + gemTwo + ">"); 
 
-//     }
+    gemThree = Math.floor(Math.random() * 300) + 50; 
+        console.log("Ruby: " + gemThree); 
+    $("#img3").html("<img src=" + "assets/images/ruby.jpg" + " value=" + gemThree + ">");
 
-    // $(".crystal").on('click', function () {
-    //     console.log($(this).attr('data-random'));
-    });
+    gemFour = Math.floor(Math.random() * 300) + 50; 
+        console.log("Sapphire: " + gemFour); 
+    $("#img4").html("<img src=" + "assets/images/sapphire.jpg" + " value=" + gemFour + ">");
 
-// });
+    $("img").on("click", function () {
+        var newScore = score += parseInt($(this).attr("value")); 
+            console.log("New Score: " + newScore); 
+        $(".scoreDisplay").html(newScore); 
+
+        if(newScore === compPick) { 
+            wins++ ; 
+            $(".wins").html("Wins: " + wins); 
+                console.log("Wins: " + wins); 
+                reset(); 
+        }  
+        
+        else if(newScore > compPick) {
+            losses++ ; 
+            $(".losses").html("Losses: " + losses); 
+                console.log("Losses: " + losses); 
+                reset();  
+        }
+    }); 
+}
+
+$("img").on("click", function () {
+    var newScore = score += parseInt($(this).attr("value")); 
+        console.log("New Score: " + newScore); 
+    $(".scoreDisplay").html(newScore); 
+
+    if(newScore === compPick) { 
+        wins++ ; 
+        $(".wins").html("Wins: " + wins); 
+            console.log("Wins: " + wins); 
+            reset(); 
+    } 
+
+    else if(newScore > compPick) {
+        losses++ ; 
+        $(".losses").html("Losses: " + losses); 
+            console.log("Losses: " + losses); 
+            reset(); 
+    }
+
+}); 
+
+});
